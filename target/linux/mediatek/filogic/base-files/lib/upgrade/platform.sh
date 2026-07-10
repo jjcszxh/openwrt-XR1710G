@@ -271,6 +271,12 @@ platform_do_upgrade() {
 		esac
 		nand_do_upgrade "$1"
 		;;
+	beeconmini,seed-ac1)
+		CI_KERNPART="kernel"
+		CI_ROOTPART="rootfs"
+		CI_DATAPART="rootfs_data"
+		emmc_do_upgrade "$1"
+		;;
 	mercusys,mr80x-v3|\
 	mercusys,mr85x|\
 	mercusys,mr90x-v1|\
@@ -448,6 +454,7 @@ platform_copy_config() {
 	acer,vero-w6m|\
 	airpi,ap3000m|\
 	arcadyan,mozart|\
+	beeconmini,seed-ac1|\
 	glinet,gl-mt2500|\
 	glinet,gl-mt2500-airoha|\
 	glinet,gl-mt6000|\
